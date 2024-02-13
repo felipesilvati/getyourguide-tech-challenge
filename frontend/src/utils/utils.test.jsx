@@ -1,4 +1,5 @@
-import { ConditionalWrapper, getActivitiesWithSuppliers } from './utils';
+import { getActivitiesWithSuppliers } from './utils';
+import { ConditionalWrapper } from './ConditionalWrapper';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
