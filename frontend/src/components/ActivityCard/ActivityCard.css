@@ -1,0 +1,5 @@
+.custom-card .ant-card-meta-title {
+  white-space: normal; /* Allow text to wrap */
+  overflow: visible; /* Make overflow visible */
+  text-overflow: clip; /* Prevent ellipsis */
+}
