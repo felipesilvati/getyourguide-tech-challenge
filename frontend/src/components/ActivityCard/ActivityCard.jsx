@@ -7,16 +7,6 @@ import currency from 'currency.js';
 import { ConditionalWrapper } from '../../utils/utils';
 import { InfoCircleOutlined } from '@ant-design/icons';
 
-// Example of activity.supplier:
-// {
-//   "id": 1,
-//   "name": "John Doe",
-//   "address": "123 Main St",
-//   "zip": "12345",
-//   "city": "Anytown",
-//   "country": "USA"
-// },
-
 const ActivityCard = ({ activity }) => {
   const price = currency(activity.price).format({ symbol: activity.currency, precision: 0 })
   const priceLabel = <><Text strong>From {price}</Text> <Text>per person</Text></>

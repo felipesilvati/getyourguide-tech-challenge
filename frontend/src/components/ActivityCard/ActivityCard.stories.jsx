@@ -5,7 +5,6 @@ import { getActivitiesWithSuppliers } from "../../utils/utils";
 
 const activitiesWithSuppliers = getActivitiesWithSuppliers(activities, suppliers)
 
-
 export default {
   title: "Components/ActivityCard",
   component: ActivityCard,
