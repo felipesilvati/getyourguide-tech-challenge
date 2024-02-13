@@ -1,9 +1,9 @@
 import ActivityCardList from './ActivityCardList';
 import activities from '../../../../resources/activities.json';
 import suppliers from '../../../../resources/suppliers.json';
-import { getActivitiesWithSuppliers } from "../../utils/utils";
+import { getActivitiesWithSuppliers, sortBySpecialOffer } from "../../utils/utils";
 
-const activitiesWithSuppliers = getActivitiesWithSuppliers(activities, suppliers);
+const activitiesWithSuppliers = sortBySpecialOffer(getActivitiesWithSuppliers(activities, suppliers));
 
 export default {
   title: "Components/ActivityCardList",

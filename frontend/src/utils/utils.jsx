@@ -14,4 +14,7 @@ const getActivitiesWithSuppliers = (activities, suppliers) => activities
     supplier: suppliers.find(supplier => supplier.id === activity.supplierId)
   }));
 
-export { getActivitiesWithSuppliers };
+const sortBySpecialOffer = (activities) => activities
+  .sort((a, b) => b.specialOffer - a.specialOffer);
+
+export { getActivitiesWithSuppliers, sortBySpecialOffer };
