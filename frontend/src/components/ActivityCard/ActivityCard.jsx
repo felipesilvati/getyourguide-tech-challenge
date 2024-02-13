@@ -1,19 +1,20 @@
 import React from 'react';
-import { Badge, Card, Rate, Typography } from 'antd';
+import { Badge, Card, Flex, Rate, Tooltip, Typography } from 'antd';
 const { Meta } = Card;
 const { Text } = Typography;
 import './ActivityCard.css';
 import currency from 'currency.js';
-import ConditionalWrapper from '../../utils/ConditionalWrapper';
+import { ConditionalWrapper } from '../../utils/utils';
+import { InfoCircleOutlined } from '@ant-design/icons';
 
+// Example of activity.supplier:
 // {
-//   "id": 25651,
-//   "title": "German Tour: Parliament Quarter & Reichstag glass dome",
-//   "price": 14,
-//   "currency": "$",
-//   "rating": 4.8,
-//   "specialOffer": false,
-//   "supplierId": 1
+//   "id": 1,
+//   "name": "John Doe",
+//   "address": "123 Main St",
+//   "zip": "12345",
+//   "city": "Anytown",
+//   "country": "USA"
 // },
 
 const ActivityCard = ({ activity }) => {
@@ -26,8 +27,19 @@ const ActivityCard = ({ activity }) => {
     </div>
   )
 
+  const supplierLocation = `${activity.supplier.address} - ${activity.supplier.city} ${activity.supplier.zip} - ${activity.supplier.country}`
+
+  // Show the address on a tooltip when hovering over the supplier's name
+  const supplierInfo = (
+    <Flex gap='small'>
+      <Text italic>By {activity.supplier.name}</Text>
+      <Tooltip title={supplierLocation} placement='right'><InfoCircleOutlined color='#eb2f96' /></Tooltip>
+    </Flex>
+  )
+
   const description = (
     <>
+      <p>{supplierInfo}</p>
       <p>{rateLabel}</p>
       <p>{priceLabel}</p>
     </>
