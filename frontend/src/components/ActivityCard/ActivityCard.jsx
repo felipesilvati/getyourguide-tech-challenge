@@ -1,9 +1,10 @@
 import React from 'react';
-import { Card, Rate, Typography } from 'antd';
+import { Badge, Card, Rate, Typography } from 'antd';
 const { Meta } = Card;
 const { Text } = Typography;
 import './ActivityCard.css';
 import currency from 'currency.js';
+import ConditionalWrapper from '../../utils/ConditionalWrapper';
 
 // {
 //   "id": 25651,
@@ -32,19 +33,23 @@ const ActivityCard = ({ activity }) => {
     </>
   )
 
+  const getWrapper = (children) => <Badge.Ribbon text='Special Offer' color='#ff5533' placement='start'>{children}</Badge.Ribbon>
+
   return (
-    <Card
-      hoverable
-      style={{ width: 290 }}
-      className='custom-card'
-      cover={<img alt={activity.title} src={`https://picsum.photos/290/244`} />} // Using a placeholder image for now
-      key={activity.id}
-    >
-      <Meta
-        title={activity.title}
-        description={description}
-      />
-    </Card>
+    <ConditionalWrapper condition={activity.specialOffer} wrapper={getWrapper}>
+      <Card
+        hoverable
+        style={{ width: 290 }}
+        className='custom-card'
+        cover={<img alt={activity.title} src={`https://picsum.photos/290/244`} />} // Using a placeholder image for now
+        key={activity.id}
+      >
+        <Meta
+          title={activity.title}
+          description={description}
+        />
+      </Card>
+    </ConditionalWrapper>
   )
 }
 
