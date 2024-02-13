@@ -5482,6 +5482,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"currency.js@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "currency.js@npm:2.0.4"
+  checksum: 10c0/e7cd308a97c7b5d3413fa304542da62b7205a28144889b9b38f0fd203fe4d3c499a9541303fcbb6a9fac33a7ee39ab02d810c2c8f37cd5c69a7991adef638ba3
+  languageName: node
+  linkType: hard
+
 "dayjs@npm:^1.11.10":
   version: 1.11.10
   resolution: "dayjs@npm:1.11.10"
@@ -6759,6 +6766,7 @@ __metadata:
     "@types/react-dom": "npm:^18.2.19"
     "@vitejs/plugin-react": "npm:^4.2.1"
     antd: "npm:^5.14.1"
+    currency.js: "npm:^2.0.4"
     eslint: "npm:^8.56.0"
     eslint-plugin-react: "npm:^7.33.2"
     eslint-plugin-react-hooks: "npm:^4.6.0"
