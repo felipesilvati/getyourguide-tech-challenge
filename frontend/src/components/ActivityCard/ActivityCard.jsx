@@ -49,7 +49,7 @@ const ActivityCard = ({ activity }) => {
         hoverable
         style={{ width: 290 }}
         className="custom-card"
-        cover={<img style={{ width: 290, height: 244 }} alt={activity.title} src="https://picsum.photos/290/244" />} // Using a placeholder image for now
+        cover={<img style={{ width: 290, height: 244 }} alt={activity.title} src={`https://picsum.photos/seed/${activity.id}/290/244`} />} // Using a placeholder image for now
         key={activity.id}
       >
         <Meta

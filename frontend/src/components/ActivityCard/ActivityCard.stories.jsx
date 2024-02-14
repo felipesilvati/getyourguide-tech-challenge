@@ -1,7 +1,7 @@
 import ActivityCard from "./ActivityCard";
 import activities from '../../../../resources/activities.json'
 import suppliers from '../../../../resources/suppliers.json'
-import { getActivitiesWithSuppliers } from "../../utils/utils";
+import { getActivitiesWithSuppliers, getRandomArrayItem } from "../../utils/utils";
 
 const activitiesWithSuppliers = getActivitiesWithSuppliers(activities, suppliers)
 
@@ -9,7 +9,10 @@ export default {
   title: "Components/ActivityCard",
   component: ActivityCard,
   args: {
-    activity: activitiesWithSuppliers[0],
+    activity: {
+      ...getRandomArrayItem(activitiesWithSuppliers),
+      specialOffer: false,
+    },
   },
 }
 
@@ -19,7 +22,7 @@ export const withSpecialOffer = {
   render: Default,
   args: {
     activity: {
-      ...activitiesWithSuppliers[0],
+      ...getRandomArrayItem(activitiesWithSuppliers),
       specialOffer: true,
     }
   }
