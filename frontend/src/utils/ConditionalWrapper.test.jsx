@@ -1,6 +1,6 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ConditionalWrapper } from './ConditionalWrapper';
+import { describe, it, expect } from 'vitest';
 
 describe('ConditionalWrapper', () => {
   it('renders children within a wrapper when condition is true', () => {
