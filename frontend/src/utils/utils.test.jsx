@@ -1,4 +1,4 @@
-import { getActivitiesWithSuppliers, sortBySpecialOffer } from './utils';
+import { getActivitiesWithSuppliers, sortBySpecialOffer, getRandomArrayItem } from './utils';
 import { ConditionalWrapper } from './ConditionalWrapper';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
@@ -196,3 +196,33 @@ describe('sortBySpecialOffer', () => {
     expect(sortedWithoutSpecialOffers.map(a => a.id)).toEqual(noSpecialOffers.map(a => a.id));
   });
 });
+
+describe('getRandomArrayItem', () => {
+  it('returns an item from the array', () => {
+    const array = [1, 2, 3, 4, 5];
+    const item = getRandomArrayItem(array);
+    expect(array).toContain(item);
+  });
+
+  it('returns undefined for an empty array', () => {
+    const array = [];
+    const item = getRandomArrayItem(array);
+    expect(item).toBeUndefined();
+  });
+
+  it('consistently returns items from the array across multiple calls', () => {
+    const array = ['a', 'b', 'c', 'd', 'e'];
+    const results = new Set();
+    const iterations = 100; // Test a large number of iterations to ensure randomness
+
+    for (let i = 0; i < iterations; i++) {
+      const item = getRandomArrayItem(array);
+      results.add(item);
+    }
+
+    // Verify that all items were eventually returned
+    array.forEach(item => {
+      expect(results.has(item)).toBeTruthy();
+    });
+  });
+})

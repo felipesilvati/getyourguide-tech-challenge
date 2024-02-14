@@ -17,4 +17,31 @@ const getActivitiesWithSuppliers = (activities, suppliers) => activities
 const sortBySpecialOffer = (activities) => activities
   .sort((a, b) => b.specialOffer - a.specialOffer);
 
-export { getActivitiesWithSuppliers, sortBySpecialOffer };
+/**
+ * Returns a random item from the provided array.
+ * If the array is empty, it returns `undefined`.
+ *
+ * @param {Array} array - The array from which to pick a random item.
+ * @returns {*} The random item from the array. The return type depends on the array's content.
+ *
+ * @example
+ * // Example usage for an array of numbers
+ * const numbers = [1, 2, 3, 4, 5];
+ * const randomNumber = getRandomArrayItem(numbers);
+ * console.log(randomNumber); // Logs a random number from the numbers array
+ *
+ * @example
+ * // Example usage for an array of strings
+ * const colors = ["red", "green", "blue", "yellow"];
+ * const randomColor = getRandomArrayItem(colors);
+ * console.log(randomColor); // Logs a random color from the colors array
+ */
+function getRandomArrayItem(array) {
+  if (!array.length) {
+    return undefined;
+  }
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
+
+export { getActivitiesWithSuppliers, sortBySpecialOffer, getRandomArrayItem };
