@@ -7,7 +7,7 @@
 - [x] Endpoint to get list of activities
 - [x] Endpoint to get suppliers
 - [x] Endpoint to get activities with suppliers combined
-- [ ] Decide on REST vs. GraphQL for API
+- [x] Decide on REST vs. GraphQL for API
 - [ ] Implement filtering logic (server-side or client-side, based on decision)
 - [ ] Add a Dockerfile for the backend
 - [ ] Add caching mechanism (optional, based on performance needs)
@@ -15,7 +15,7 @@
 #### Frontend Development
 - [x] Init React Frontend
 - [x] Create a storybook for the main UI components
-- [ ] Create UI showing list of activities
+- [x] Create UI showing list of activities
 - [ ] Add a search bar to filter activities (ensure alignment with backend filtering logic decision)
 - [ ] Add a sorting feature for activities
 - [ ] Implement UI to display activity details (title, price with currency, rating, special offer status, supplier name, and location)
@@ -24,7 +24,7 @@
 #### Fullstack Integration
 - [x] Ensure client application consumes the API exposed by the backend (activities)
 - [x] Ensure client application consumes the API exposed by the backend (suppliers)
-- [ ] Ensure client application consumes the API exposed by the backend (activities with suppliers combined)
+- [x] Ensure client application consumes the API exposed by the backend (activities with suppliers combined)
 - [ ] Implement searching/filtering functionality based on architectural decision
 - [ ] Implement sorting functionality for the list of activities
 - [ ] Implement pagination for handling large sets of activities
