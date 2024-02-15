@@ -6,6 +6,7 @@
 - [x] Init Express Backend with a REST API (healthcheck)
 - [x] Endpoint to get list of activities
 - [x] Endpoint to get suppliers
+- [x] Endpoint to get activities with suppliers combined
 - [ ] Decide on REST vs. GraphQL for API
 - [ ] Implement filtering logic (server-side or client-side, based on decision)
 - [ ] Add a Dockerfile for the backend
@@ -23,6 +24,7 @@
 #### Fullstack Integration
 - [x] Ensure client application consumes the API exposed by the backend (activities)
 - [x] Ensure client application consumes the API exposed by the backend (suppliers)
+- [ ] Ensure client application consumes the API exposed by the backend (activities with suppliers combined)
 - [ ] Implement searching/filtering functionality based on architectural decision
 - [ ] Implement sorting functionality for the list of activities
 - [ ] Implement pagination for handling large sets of activities
