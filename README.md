@@ -22,7 +22,7 @@
 
 #### Fullstack Integration
 - [x] Ensure client application consumes the API exposed by the backend (activities)
-- [ ] Ensure client application consumes the API exposed by the backend (suppliers)
+- [x] Ensure client application consumes the API exposed by the backend (suppliers)
 - [ ] Implement searching/filtering functionality based on architectural decision
 - [ ] Implement sorting functionality for the list of activities
 - [ ] Implement pagination for handling large sets of activities
