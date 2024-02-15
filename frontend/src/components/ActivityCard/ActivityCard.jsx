@@ -24,11 +24,11 @@ const ActivityCard = ({ activity }) => {
     </div>
   );
 
-  const supplierLocation = `${activity.supplier.address} - ${activity.supplier.city} ${activity.supplier.zip} - ${activity.supplier.country}`;
+  const supplierLocation = activity.supplier ? `${activity.supplier.address} - ${activity.supplier.city} ${activity.supplier.zip} - ${activity.supplier.country}` : 'No Supplier Info';
 
   const supplierInfo = (
     <Flex gap="small">
-      <Text italic>By {activity.supplier.name}</Text>
+      <Text italic>By {activity.supplier?.name || 'Unknown'}</Text>
       <Tooltip title={supplierLocation} placement="right"><InfoCircleOutlined color="#eb2f96" /></Tooltip>
     </Flex>
   );
