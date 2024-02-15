@@ -1,29 +1,18 @@
 import { Button, Result, Spin, Typography } from 'antd'
 import { useQuery } from 'react-query'
 import ActivityCardList from './components/ActivityCardList/ActivityCardList'
-import { getActivitiesWithSuppliers } from './utils/utils'
 const { Title } = Typography
 
 function App() {
   const { data: activities, isLoading, isError } = useQuery({
     queryKey: ['activitiesWithSuppliers'],
     queryFn: async () => {
-      const activitiesResponse = await fetch('http://localhost:3001/activities')
-      if (!activitiesResponse.ok) {
+      const response = await fetch('http://localhost:3001/activities/with-suppliers')
+      if (!response.ok) {
         throw new Error('Network response was not ok')
       }
 
-      const suppliersResponse = await fetch('http://localhost:3001/suppliers')
-      if (!suppliersResponse.ok) {
-        throw new Error('Network response was not ok')
-      }
-
-      const activities = await activitiesResponse.json()
-      const suppliers = await suppliersResponse.json()
-
-      const activitiesWithSuppliers = getActivitiesWithSuppliers(activities, suppliers)
-
-      return activitiesWithSuppliers
+      return response.json()
     },
     onError: error => console.error('Error fetching activities:', error),
   })
