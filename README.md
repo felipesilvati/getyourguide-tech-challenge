@@ -5,7 +5,7 @@
 #### Backend Development
 - [x] Init Express Backend with a REST API (healthcheck)
 - [x] Endpoint to get list of activities
-- [ ] Endpoint to get suppliers
+- [x] Endpoint to get suppliers
 - [ ] Decide on REST vs. GraphQL for API
 - [ ] Implement filtering logic (server-side or client-side, based on decision)
 - [ ] Add a Dockerfile for the backend
