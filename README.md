@@ -3,7 +3,7 @@
 ### TODO List
 
 #### Backend Development
-- [ ] Init Express Backend with a REST API (healthcheck)
+- [x] Init Express Backend with a REST API (healthcheck)
 - [ ] Endpoint to get list of activities
 - [ ] Endpoint to get suppliers
 - [ ] Decide on REST vs. GraphQL for API
