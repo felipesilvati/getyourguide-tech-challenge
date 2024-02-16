@@ -27,3 +27,6 @@ dist-ssr
 !.yarn/releases
 !.yarn/plugins
 .pnp.*
+
+# Docker
+.build

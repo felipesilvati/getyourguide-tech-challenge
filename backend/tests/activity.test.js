@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../app');
-const activities = require('../../resources/activities.json')
-const suppliers = require('../../resources/suppliers.json');
+const activities = require('../resources/activities.json')
+const suppliers = require('../resources/suppliers.json');
 const { getActivitiesWithSuppliers } = require('../utils/utils');
 
 const DEFAULT_PAGINATION_SLICE = 10;

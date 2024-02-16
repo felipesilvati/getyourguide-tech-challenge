@@ -8,6 +8,8 @@ import { SearchOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
 
+const apiUrl = import.meta.env.VITE_API_URL || 'https://backend:3001';
+
 function App() {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
@@ -18,7 +20,7 @@ function App() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ['activitiesWithSuppliers', page, pageSize, debouncedSearchTerm, onlyShowSpecialOffers],
     queryFn: async () => {
-      const { data } = await axios.get('http://localhost:3001/activities/with-suppliers', {
+      const { data } = await axios.get(`${apiUrl}/activities/with-suppliers`, {
         params: {
           page,
           pageSize,

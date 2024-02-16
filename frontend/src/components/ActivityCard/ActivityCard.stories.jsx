@@ -1,6 +1,6 @@
 import ActivityCard from "./ActivityCard";
-import activities from '../../../../resources/activities.json'
-import suppliers from '../../../../resources/suppliers.json'
+import activities from '../../../resources/activities.json'
+import suppliers from '../../../resources/suppliers.json'
 import { getActivitiesWithSuppliers, getRandomArrayItem } from "../../utils/utils";
 
 const activitiesWithSuppliers = getActivitiesWithSuppliers(activities, suppliers)

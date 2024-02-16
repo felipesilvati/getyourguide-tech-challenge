@@ -1,6 +1,6 @@
 import ActivityCardList from './ActivityCardList';
-import activities from '../../../../resources/activities.json';
-import suppliers from '../../../../resources/suppliers.json';
+import activities from '../../../resources/activities.json';
+import suppliers from '../../../resources/suppliers.json';
 import { getActivitiesWithSuppliers, sortBySpecialOffer } from "../../utils/utils";
 
 const activitiesWithSuppliers = sortBySpecialOffer(getActivitiesWithSuppliers(activities, suppliers));

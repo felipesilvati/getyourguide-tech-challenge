@@ -9,7 +9,7 @@
 - [x] Endpoint to get activities with suppliers combined
 - [x] Decide on REST vs. GraphQL for API
 - [x] Add pagination for the list of activities
-- [ ] Add a Dockerfile for the backend
+- [x] Add a Dockerfile for the backend
 
 #### Frontend Development
 - [x] Init React Frontend
@@ -17,7 +17,7 @@
 - [x] Create UI showing list of activities
 - [x] Add a search bar to filter activities (ensure alignment with backend filtering logic decision)
 - [ ] Implement UI to display activity details (title, price with currency, rating, special offer status, supplier name, and location)
-- [ ] Add a Dockerfile for the frontend
+- [x] Add a Dockerfile for the frontend
 
 #### Fullstack Integration
 - [x] Ensure client application consumes the API exposed by the backend (activities)
@@ -26,8 +26,8 @@
 - [x] Ensure pagination works as expected with the client application
 
 #### Infrastructure and Deployment
-- [ ] Ensure the project can be run locally with the provided Docker compose file (`docker compose up --build`)
-- [ ] Modify/add any dependencies as required for Docker integration
+- [x] Ensure the project can be run locally with the provided Docker compose file (`docker compose up --build`)
+- [x] Modify/add any dependencies as required for Docker integration
 
 #### Documentation and Notes
 - [ ] Document architectural decisions and rationale
