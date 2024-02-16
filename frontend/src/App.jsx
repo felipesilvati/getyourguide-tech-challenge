@@ -43,9 +43,9 @@ function App() {
   return (
     <>
       <Title style={{ paddingLeft: 16 }}>Unforgetable Activities</Title>
-      <Flex style={{ margin: 16 }} align='baseline' gap='small'>
+      <Flex style={{ margin: 16 }} align='baseline' gap='middle' wrap='wrap'>
         <Input allowClear addonBefore={<SearchOutlined />} value={searchTerm} onChange={handleSearchInputChange} placeholder="Search activities by name" style={{ width: 400 }} />
-        <Checkbox checked={onlyShowSpecialOffers} style={{ marginLeft: 16 }} onChange={handleCheckboxChange}>Only special offers</Checkbox>
+        <Checkbox checked={onlyShowSpecialOffers} onChange={handleCheckboxChange}>Only special offers</Checkbox>
       </Flex>
       {shouldRenderSearchResults && <Paragraph style={{ marginLeft: 16 }} level={4}>{`Found ${activities.length} '${debouncedSearchTerm}' activities`}</Paragraph>}
       {isLoading ? <Spin /> : <ActivityCardList activities={activities} />}

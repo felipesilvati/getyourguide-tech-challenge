@@ -34,11 +34,11 @@ const ActivityCard = ({ activity }) => {
   );
 
   const description = (
-    <>
-      <p>{supplierInfo}</p>
-      <p>{rateLabel}</p>
-      <p>{priceLabel}</p>
-    </>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, justifyContent: 'flex-end', height: '100%' }}>
+      <div>{supplierInfo}</div>
+      <div>{rateLabel}</div>
+      <div>{priceLabel}</div>
+    </div>
   );
 
   const getWrapper = (children) => <Badge.Ribbon text="Special Offer" color="#ff5533" placement="start">{children}</Badge.Ribbon>;
