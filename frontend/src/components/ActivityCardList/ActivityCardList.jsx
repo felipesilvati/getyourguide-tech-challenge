@@ -10,6 +10,8 @@ const ActivityCardList = ({ activities }) => {
     padding: '16px',
   };
 
+  if (!activities?.length) return null;
+
   return (
     <div style={listStyle}>
       {activities.map(activity => (

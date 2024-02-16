@@ -1,23 +1,30 @@
-import { Button, Result, Spin, Typography } from 'antd'
+import { useState } from 'react';
+import { Button, Input, Result, Spin, Typography } from 'antd'
 import { useQuery } from 'react-query'
+import axios from 'axios'
+import { useDebounce } from 'use-debounce'
 import ActivityCardList from './components/ActivityCardList/ActivityCardList'
-const { Title } = Typography
+import { SearchOutlined } from '@ant-design/icons';
+const { Title, Paragraph } = Typography
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [debouncedSearchTerm] = useDebounce(searchTerm, 500);
+
   const { data: activities, isLoading, isError } = useQuery({
-    queryKey: ['activitiesWithSuppliers'],
+    queryKey: ['activitiesWithSuppliers', debouncedSearchTerm],
     queryFn: async () => {
-      const response = await fetch('http://localhost:3001/activities/with-suppliers')
-      if (!response.ok) {
-        throw new Error('Network response was not ok')
-      }
+      const { data } = await axios.get('http://localhost:3001/activities/with-suppliers', {
+        params: { query: debouncedSearchTerm },
+      });
 
-      return response.json()
+      return data;
     },
-    onError: error => console.error('Error fetching activities:', error),
-  })
+    // React Query options like onError can be used for error handling
+    onError: (error) => console.error('Error fetching activities:', error),
+  });
 
-  if (isLoading) return <Spin />
+  const handleSearchInputChange = (e) => setSearchTerm(e.target.value);
 
   if (isError) return (
     <Result
@@ -28,10 +35,16 @@ function App() {
     />
   )
 
+  const shouldRenderSearchResults = debouncedSearchTerm && !isLoading && activities?.length > 0;
+  const shouldRenderNoResults = !activities?.length && !isLoading;
+
   return (
     <>
       <Title style={{ paddingLeft: 16 }}>Unforgetable Activities</Title>
-      <ActivityCardList activities={activities} />
+      <Input allowClear addonBefore={<SearchOutlined />} value={searchTerm} onChange={handleSearchInputChange} placeholder="Search by name" style={{ width: 200, margin: 16 }} />
+      {shouldRenderSearchResults && <Paragraph level={4} style={{ paddingLeft: 16 }}>Found {activities.length} "{debouncedSearchTerm}" activities</Paragraph>}
+      {isLoading ? <Spin /> : <ActivityCardList activities={activities} />}
+      {shouldRenderNoResults && <Result status="404" title="No activities found" />}
     </>
   )
 }
