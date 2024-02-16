@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Input, Result, Spin, Typography } from 'antd'
+import { Button, Flex, Input, Result, Spin, Typography } from 'antd'
 import { useQuery } from 'react-query'
 import axios from 'axios'
 import { useDebounce } from 'use-debounce'
@@ -41,8 +41,10 @@ function App() {
   return (
     <>
       <Title style={{ paddingLeft: 16 }}>Unforgetable Activities</Title>
-      <Input allowClear addonBefore={<SearchOutlined />} value={searchTerm} onChange={handleSearchInputChange} placeholder="Search by name" style={{ width: 200, margin: 16 }} />
-      {shouldRenderSearchResults && <Paragraph level={4} style={{ paddingLeft: 16 }}>{`Found ${activities.length} '${debouncedSearchTerm}' activities`}</Paragraph>}
+      <Flex style={{ margin: 16 }} align='baseline' gap='middle'>
+        <Input allowClear addonBefore={<SearchOutlined />} value={searchTerm} onChange={handleSearchInputChange} placeholder="Search activities by name" style={{ width: 400 }} />
+        {shouldRenderSearchResults && <Paragraph level={4}>{`Found ${activities.length} '${debouncedSearchTerm}' activities`}</Paragraph>}
+      </Flex>
       {isLoading ? <Spin /> : <ActivityCardList activities={activities} />}
       {shouldRenderNoResults && <Result status="404" title="No activities found" />}
     </>
