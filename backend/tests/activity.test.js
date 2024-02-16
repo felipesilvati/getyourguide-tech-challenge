@@ -27,4 +27,19 @@ describe('GET /activities/with-suppliers', () => {
       getActivitiesWithSuppliers(activities, suppliers)
     );
   });
+
+  it('responds with status 200 and an array of filtered activities with suppliers when a query is provided', async () => {
+    const searchTerm = 'Berlin';
+    const filteredActivities = activities.filter(activity =>
+      activity.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    const expectedResponse = getActivitiesWithSuppliers(filteredActivities, suppliers);
+
+    const response = await request(app)
+      .get(`/activities/with-suppliers?query=${searchTerm}`)
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    expect(response.body).toEqual(expectedResponse);
+  });
 })

@@ -7,5 +7,9 @@ exports.getActivities = (req, res) => {
 }
 
 exports.getActivitiesWithSupplier = (req, res) => {
-  res.status(200).json(getActivitiesWithSuppliers(activities, suppliers));
+  const filteredActivities = req.query?.query ?
+    activities.filter(activity => activity.title.toLowerCase().includes(req.query.query?.toLowerCase()))
+    : activities;
+
+  res.status(200).json(getActivitiesWithSuppliers(filteredActivities, suppliers));
 }
