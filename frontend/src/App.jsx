@@ -8,7 +8,7 @@ import { SearchOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
 
-const apiUrl = 'http://backend:3001';
+const apiUrl = import.meta.env.VITE_API_URL || 'https://backend:3001';
 
 function App() {
   const [page, setPage] = useState(1);
