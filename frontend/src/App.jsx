@@ -6,7 +6,7 @@ import { useDebounce } from 'use-debounce';
 import ActivityCardList from './components/ActivityCardList/ActivityCardList';
 import { SearchOutlined } from '@ant-design/icons';
 
-const { Title, Paragraph } = Typography;
+const { Title } = Typography;
 
 function App() {
   const [page, setPage] = useState(1);

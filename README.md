@@ -8,7 +8,7 @@
 - [x] Endpoint to get suppliers
 - [x] Endpoint to get activities with suppliers combined
 - [x] Decide on REST vs. GraphQL for API
-- [ ] Add pagination for the list of activities
+- [x] Add pagination for the list of activities
 - [ ] Add a Dockerfile for the backend
 
 #### Frontend Development
@@ -23,7 +23,7 @@
 - [x] Ensure client application consumes the API exposed by the backend (activities)
 - [x] Ensure client application consumes the API exposed by the backend (suppliers)
 - [x] Ensure client application consumes the API exposed by the backend (activities with suppliers combined)
-- [ ] Ensure pagination works as expected with the client application
+- [x] Ensure pagination works as expected with the client application
 
 #### Infrastructure and Deployment
 - [ ] Ensure the project can be run locally with the provided Docker compose file (`docker compose up --build`)
