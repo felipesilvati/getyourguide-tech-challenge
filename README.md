@@ -16,7 +16,7 @@
 - [x] Init React Frontend
 - [x] Create a storybook for the main UI components
 - [x] Create UI showing list of activities
-- [ ] Add a search bar to filter activities (ensure alignment with backend filtering logic decision)
+- [x] Add a search bar to filter activities (ensure alignment with backend filtering logic decision)
 - [ ] Add a sorting feature for activities
 - [ ] Implement UI to display activity details (title, price with currency, rating, special offer status, supplier name, and location)
 - [ ] Add a Dockerfile for the frontend
