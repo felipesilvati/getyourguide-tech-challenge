@@ -8,16 +8,14 @@
 - [x] Endpoint to get suppliers
 - [x] Endpoint to get activities with suppliers combined
 - [x] Decide on REST vs. GraphQL for API
-- [ ] Implement filtering logic (server-side or client-side, based on decision)
+- [ ] Add pagination for the list of activities
 - [ ] Add a Dockerfile for the backend
-- [ ] Add caching mechanism (optional, based on performance needs)
 
 #### Frontend Development
 - [x] Init React Frontend
 - [x] Create a storybook for the main UI components
 - [x] Create UI showing list of activities
 - [x] Add a search bar to filter activities (ensure alignment with backend filtering logic decision)
-- [ ] Add a sorting feature for activities
 - [ ] Implement UI to display activity details (title, price with currency, rating, special offer status, supplier name, and location)
 - [ ] Add a Dockerfile for the frontend
 
@@ -25,9 +23,7 @@
 - [x] Ensure client application consumes the API exposed by the backend (activities)
 - [x] Ensure client application consumes the API exposed by the backend (suppliers)
 - [x] Ensure client application consumes the API exposed by the backend (activities with suppliers combined)
-- [ ] Implement searching/filtering functionality based on architectural decision
-- [ ] Implement sorting functionality for the list of activities
-- [ ] Implement pagination for handling large sets of activities
+- [ ] Ensure pagination works as expected with the client application
 
 #### Infrastructure and Deployment
 - [ ] Ensure the project can be run locally with the provided Docker compose file (`docker compose up --build`)
@@ -47,3 +43,9 @@
 - [ ] Prepare project for submission (exclude `node_modules` or other dependency directories)
 - [ ] Be prepared to present the work, demo the application, and explain architectural choices and code
 - [ ] Ready for live coding during the interview to refactor code, add features, or fix bugs
+
+### Future Improvements
+- [ ] Add a sorting feature for activities
+- [ ] Replace the current search bar with a more advanced search feature
+- [ ] Add caching mechanism (based on performance needs)
+- [ ] Change URLs in the frontend to navigate to the activity details page
