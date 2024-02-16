@@ -82,8 +82,7 @@ function App() {
             showSizeChanger
             onShowSizeChange={(current, size) => setPageSize(size)}
             style={{ textAlign: 'center', margin: '16px 0' }}
-            showTotal={(total) => `Total ${total} items`}
-            hideOnSinglePage
+            showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
           />
         </>
       )}
