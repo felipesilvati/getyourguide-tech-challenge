@@ -42,7 +42,7 @@ function App() {
     <>
       <Title style={{ paddingLeft: 16 }}>Unforgetable Activities</Title>
       <Input allowClear addonBefore={<SearchOutlined />} value={searchTerm} onChange={handleSearchInputChange} placeholder="Search by name" style={{ width: 200, margin: 16 }} />
-      {shouldRenderSearchResults && <Paragraph level={4} style={{ paddingLeft: 16 }}>Found {activities.length} "{debouncedSearchTerm}" activities</Paragraph>}
+      {shouldRenderSearchResults && <Paragraph level={4} style={{ paddingLeft: 16 }}>{`Found ${activities.length} '${debouncedSearchTerm}' activities`}</Paragraph>}
       {isLoading ? <Spin /> : <ActivityCardList activities={activities} />}
       {shouldRenderNoResults && <Result status="404" title="No activities found" />}
     </>
