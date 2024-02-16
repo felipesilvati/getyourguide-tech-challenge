@@ -53,7 +53,7 @@ describe('GET /activities/with-suppliers', () => {
   });
 
   it('correctly ignores case when filtering activities by title', async () => {
-    const searchTerm = 'berlin'.toUpperCase(); // Assuming original searchTerm is in lowercase
+    const searchTerm = 'berlin'.toUpperCase();
     const filteredActivities = activities.filter(activity =>
       activity.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
