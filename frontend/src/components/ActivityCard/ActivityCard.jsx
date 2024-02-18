@@ -51,6 +51,7 @@ const ActivityCard = ({ activity }) => {
         className="custom-card"
         cover={<img style={{ width: 290, height: 244 }} alt={activity.title} src={`https://picsum.photos/seed/${activity.id}/290/244`} />} // Using a placeholder image for now
         key={activity.id}
+        data-testid="activity-card"
       >
         <Meta
           title={activity.title}
