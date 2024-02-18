@@ -1,10 +1,10 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ActivityCardList from './ActivityCardList';
 import activities from '../../../resources/activities.json';
 import suppliers from '../../../resources/suppliers.json';
 import { getActivitiesWithSuppliers } from '../../utils/utils';
+import { describe, it, expect } from 'vitest';
 
 describe('ActivityCardList', () => {
   const activitiesWithSuppliers = getActivitiesWithSuppliers(activities, suppliers);
