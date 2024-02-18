@@ -80,6 +80,34 @@ To run the backend unit tests:
    yarn test
    ```
 
+## Design Rationale
+
+When approaching the GetYourGuide Tech Challenge, I made strategic decisions to craft a solution that balances rapid development with best practices in software architecture.
+
+### Frontend Architecture
+
+The frontend is powered by Vite and React, a combination chosen for its exceptional development speed and robust build optimizations, especially beneficial for a project with a tight deadline. Vite's out-of-the-box features, such as fast refresh and efficient bundling, allowed me to quickly see changes and iterate on the application's functionality.
+
+React's component-based model was instrumental in building a modular and maintainable codebase. The use of Storybook paralleled this approach, offering a sandbox to develop and test UI components in isolation. This not only expedited the frontend development process but also ensured a high fidelity in the visual rendering of components, which is crucial for a user-centric application.
+
+### Backend Infrastructure
+
+For the backend, I implemented a Node.js application with an Express server, a choice driven by its simplicity and flexibility. This setup enabled me to quickly scaffold a RESTful API that could reliably serve data from the provided `activities.json` and `suppliers.json` files. Although frameworks like NestJS offer extensive standardization, Express's minimalist nature was more in line with the project's scope, allowing for an agile development process without the overhead of a more opinionated framework.
+
+A key feature of the backend is pagination, ensuring the API remains scalable and performant regardless of the dataset's size. This design decision anticipates future growth and addresses potential performance bottlenecks by limiting the number of activities delivered in a single response, thereby optimizing data transfer and load times.
+
+### Testing and Quality Assurance
+
+Testing was a cornerstone of the development cycle. I leveraged Jest for unit testing to validate both backend and frontend components, ensuring reliability at the module level. To guarantee the integrated application functions as intended, I introduced an end-to-end testing suite using Cypress. This was particularly crucial for validating the application's behavior in a Dockerized environment, simulating real-world usage scenarios.
+
+### API Strategy
+
+The decision to use a REST API over GraphQL was deliberate, aimed at maintaining simplicity and reducing the initial setup complexity. Given the current requirements, REST provided a straightforward, time-efficient solution without sacrificing the application's quality or future scalability.
+
+### Concluding Thoughts
+
+In summary, the design choices made throughout this project were carefully considered to align with the challenge's objectives—delivering a scalable, testable, and high-quality application within a defined timeframe. These choices reflect a strategic approach to software development that prioritizes adaptability, performance, and maintainability.
+
 ### TODO List
 
 #### Backend Development
