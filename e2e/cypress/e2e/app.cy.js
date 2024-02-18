@@ -1,4 +1,4 @@
-const DEFAULT_WAIT_TIME_IN_MS = 500;
+const DEFAULT_WAIT_TIME_IN_MS = 600;
 
 describe('Initial Load', () => {
   it('displays the main page with a list of activities', () => {
