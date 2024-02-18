@@ -94,3 +94,12 @@ describe('Pagination Interaction', () => {
     cy.get('.ant-card').should('have.length', 14); // Activities.json has 14 items
   });
 });
+
+describe('Error State', () => {
+  it('displays an error message when the API call fails', () => {
+    cy.visit('/');
+    cy.intercept('GET', '**/activities/with-suppliers*', { statusCode: 500 });
+    cy.wait(1000);
+    cy.get('.ant-result-subtitle').should('contain', 'Sorry, something went wrong.');
+  });
+});

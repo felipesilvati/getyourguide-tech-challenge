@@ -8,7 +8,7 @@ import { SearchOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
 
-const apiUrl = import.meta.env.VITE_API_URL || 'https://backend:3001';
+const apiUrl = import.meta.env.VITE_API_URL || 'http://backend:3001';
 
 const App = () => {
   const [page, setPage] = useState(1);
@@ -32,6 +32,8 @@ const App = () => {
     },
     onError: (error) => console.error('Error fetching activities:', error),
     keepPreviousData: true,
+    retry: 1,
+    retryDelay: 200,
   });
 
   const handleSearchInputChange = (e) => setSearchTerm(e.target.value);
