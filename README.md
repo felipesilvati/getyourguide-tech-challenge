@@ -16,7 +16,6 @@
 - [x] Create a storybook for the main UI components
 - [x] Create UI showing list of activities
 - [x] Add a search bar to filter activities (ensure alignment with backend filtering logic decision)
-- [ ] Implement UI to display activity details (title, price with currency, rating, special offer status, supplier name, and location)
 - [x] Add a Dockerfile for the frontend
 
 #### Fullstack Integration
@@ -31,13 +30,14 @@
 
 #### Documentation and Notes
 - [ ] Document architectural decisions and rationale
-- [ ] Note any features/improvements left out due to time constraints
+- [x] Note any features/improvements left out due to time constraints
 - [ ] List any assumptions made during development
 - [ ] Prepare documentation for setup and API usage in `readme.md`
 
 #### Testing and Quality Assurance
-- [ ] Check test coverage for both backend and frontend components
-- [ ] Ensure functionality works as expected with Docker setup
+- [ ] Check unit test coverage for both backend and frontend components
+- [x] Ensure functionality works as expected with Docker setup
+- [ ] Basic End to end testing for the application
 
 #### Submission and Presentation Preparation
 - [ ] Prepare project for submission (exclude `node_modules` or other dependency directories)
@@ -45,7 +45,11 @@
 - [ ] Ready for live coding during the interview to refactor code, add features, or fix bugs
 
 ### Future Improvements
-- [ ] Add a sorting feature for activities
-- [ ] Replace the current search bar with a more advanced search feature
+- [ ] Replace json files with a SQL database
+- [ ] Use opinionated framework for the backend (e.g. NestJS) to improve scalability and maintainability
+- [ ] Authentication and Authorization for the API
+- [ ] Add more advanced error handling and logging
+- [ ] Implement UI to display more activity details by ID (redundant for now)
+- [ ] Replace the current search bar with a more advanced search features (e.g. sorting, filtering, etc.)
 - [ ] Add caching mechanism (based on performance needs)
-- [ ] Change URLs in the frontend to navigate to the activity details page
+- [ ] Fix variable ActivityCard component height for better UI/UX
