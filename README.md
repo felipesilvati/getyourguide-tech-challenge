@@ -6,9 +6,9 @@ Made by Felipe Silva (https://github.com/felipesilvati)
 
 ## Application Components
 
-- `/frontend`: A Vite + React application that fetches and renders activities and suppliers data from the backend.
-- `/backend`: A Node.js Express application that serves as an API provider for activities and suppliers information.
-- `/e2e`: A Cypress end-to-end testing suite that ensures the application's features work as expected with significant test coverage.
+- *frontend*: A Vite + React application that fetches and renders activities and suppliers data from the backend.
+- *backend*: A Node.js Express application that serves as an API provider for activities and suppliers information.
+- *e2e**: A Cypress end-to-end testing suite that ensures the application's features work as expected with significant test coverage.
 
 ## Running the Application
 
@@ -23,11 +23,11 @@ To run the application:
    docker compose up --build
    ```
 
-Or Simply:
+  Or simply:
 
-   ```sh
-   ./run.sh
-   ```
+    ```sh
+    ./run.sh
+    ```
 
 This command will start the frontend application and the backend API. Once the services are running, you can access:
 
@@ -44,7 +44,7 @@ To execute the end-to-end tests:
    ./run-e2e-tests.sh
    ```
 
-This will open the Cypress Test Runner in the terminal, where you can run individual test suites or all tests together.
+This will open the backend, frontend and the Cypress Test Runner in the terminal.
 
 You can also run it locally with the following steps:
 
