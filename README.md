@@ -108,7 +108,7 @@ The decision to use a REST API over GraphQL was deliberate, aimed at maintaining
 
 In summary, the design choices made throughout this project were carefully considered to align with the challenge's objectives—delivering a scalable, testable, and high-quality application within a defined timeframe. These choices reflect a strategic approach to software development that prioritizes adaptability, performance, and maintainability.
 
-### TODO List
+## My TODO List
 
 #### Backend Development
 - [x] Init Express Backend with a REST API (healthcheck)
@@ -152,7 +152,7 @@ In summary, the design choices made throughout this project were carefully consi
 - [x] Be prepared to present the work, demo the application, and explain architectural choices and code
 - [x] Ready for live coding during the interview to refactor code, add features, or fix bugs
 
-### Future Improvements
+## Future Improvements
 - [ ] Replace json files with a SQL database
 - [ ] Use opinionated framework for the backend (e.g., NestJS) to improve scalability and maintainability
 - [ ] Authentication and Authorization for the API
