@@ -1,6 +1,8 @@
 # Build stage
 FROM node:20 AS builder
 WORKDIR /frontend
+RUN rm -rf node_modules
+RUN rm -rf dist
 COPY package.json yarn.lock vite.config.js .yarnrc.yml index.html ./
 COPY src ./src
 RUN yarn set version stable

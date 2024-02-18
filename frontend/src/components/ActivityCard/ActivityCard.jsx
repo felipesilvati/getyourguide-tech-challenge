@@ -19,7 +19,7 @@ const ActivityCard = ({ activity }) => {
   );
 
   const rateLabel = (
-    <div style={{ display: 'flex', alignItems: 'center', columnGap: 10 }}>
+    <div data-testid="activity-card-rate" style={{ display: 'flex', alignItems: 'center', columnGap: 10 }}>
       <Rate disabled defaultValue={activity.rating} allowHalf /> <Text>{activity.rating}</Text>
     </div>
   );
@@ -29,7 +29,7 @@ const ActivityCard = ({ activity }) => {
   const supplierInfo = (
     <Flex gap="small">
       <Text italic>By {activity.supplier?.name || 'Unknown'}</Text>
-      <Tooltip title={supplierLocation} placement="right"><InfoCircleOutlined color="#eb2f96" /></Tooltip>
+      <Tooltip placement="right" title={supplierLocation}><InfoCircleOutlined color="#eb2f96" /></Tooltip>
     </Flex>
   );
 
@@ -37,11 +37,11 @@ const ActivityCard = ({ activity }) => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16, justifyContent: 'flex-end', height: '100%' }}>
       <div>{supplierInfo}</div>
       <div>{rateLabel}</div>
-      <div>{priceLabel}</div>
+      <div data-testid="activity-card-price">{priceLabel}</div>
     </div>
   );
 
-  const getWrapper = (children) => <Badge.Ribbon text="Special Offer" color="#ff5533" placement="start">{children}</Badge.Ribbon>;
+  const getWrapper = (children) => <span data-testid="activity-card-special-offer-badge"><Badge.Ribbon text='Special Offer' color="#ff5533" placement="start">{children}</Badge.Ribbon></span>;
 
   return (
     <ConditionalWrapper condition={activity.specialOffer} wrapper={getWrapper}>
@@ -51,6 +51,7 @@ const ActivityCard = ({ activity }) => {
         className="custom-card"
         cover={<img style={{ width: 290, height: 244 }} alt={activity.title} src={`https://picsum.photos/seed/${activity.id}/290/244`} />} // Using a placeholder image for now
         key={activity.id}
+        data-testid="activity-card"
       >
         <Meta
           title={activity.title}
