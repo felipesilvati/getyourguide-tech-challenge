@@ -1,4 +1,84 @@
-# getyourguide-tech-challenge
+# GetYourGuide Tech Challenge
+
+This repository contains a full-stack application for displaying activities and suppliers data. It is composed of a React frontend, a Node.js backend, and a Cypress end-to-end testing suite.
+
+Made by Felipe Silva (https://github.com/felipesilvati)
+
+## Application Components
+
+- `/frontend`: A Vite + React application that fetches and renders activities and suppliers data from the backend.
+- `/backend`: A Node.js Express application that serves as an API provider for activities and suppliers information.
+- `/e2e`: A Cypress end-to-end testing suite that ensures the application's features work as expected with significant test coverage.
+
+## Running the Application
+
+To run the application:
+
+1. Ensure that Docker is installed on your system.
+2. Clone the repository to your local machine.
+3. Navigate to the root directory of the project.
+4. Run the following command to build and start all services:
+
+   ```sh
+   docker compose up --build
+   ```
+
+Or Simply:
+
+   ```sh
+   ./run.sh
+   ```
+
+This command will start the frontend application and the backend API. Once the services are running, you can access:
+
+- The frontend at `http://localhost:4173`.
+- The backend API endpoints directly at `http://localhost:3001`.
+
+## Testing the Application
+
+### End to End Testing
+
+To execute the end-to-end tests:
+
+   ```sh
+   ./run-e2e-tests.sh
+   ```
+
+This will open the Cypress Test Runner in the terminal, where you can run individual test suites or all tests together.
+
+You can also run it locally with the following steps:
+
+1. Make sure that both frontend/backend services are running.
+2. Navigate to the `/e2e` directory.
+3. Run the following command to start the Cypress Test Runner:
+
+   ```sh
+   yarn install
+   yarn run cypress open
+   ```
+
+### Unit Testing
+#### Frontend
+To run the frontend unit tests:
+
+1. Navigate to the `/frontend` directory.
+2. Run the following command to execute the tests:
+
+   ```sh
+   yarn install
+   yarn test
+   ```
+
+#### Backend
+To run the backend unit tests:
+
+1. Navigate to the `/backend` directory.
+2. Run the following command to execute the tests:
+
+   ```sh
+   yarn install
+   yarn test
+   ```
 
 ### TODO List
 
@@ -25,31 +105,32 @@
 - [x] Ensure pagination works as expected with the client application
 
 #### Infrastructure and Deployment
-- [x] Ensure the project can be run locally with the provided Docker compose file (`docker compose up --build`)
+- [x] Ensure the project can be run locally with the provided Docker compose file (`docker-compose up --build`)
 - [x] Modify/add any dependencies as required for Docker integration
 
 #### Documentation and Notes
-- [ ] Document architectural decisions and rationale
+- [x] Document architectural decisions and rationale
 - [x] Note any features/improvements left out due to time constraints
-- [ ] List any assumptions made during development
-- [ ] Prepare documentation for setup and API usage in `readme.md`
+- [x] List any assumptions made during development
+- [x] Prepare documentation for setup and API usage in `readme.md`
 
 #### Testing and Quality Assurance
-- [ ] Check unit test coverage for both backend and frontend components
+- [x] Check unit test coverage for both backend and frontend components
 - [x] Ensure functionality works as expected with Docker setup
-- [ ] Basic End to end testing for the application
+- [x] End to end testing for the application
 
 #### Submission and Presentation Preparation
-- [ ] Prepare project for submission (exclude `node_modules` or other dependency directories)
-- [ ] Be prepared to present the work, demo the application, and explain architectural choices and code
-- [ ] Ready for live coding during the interview to refactor code, add features, or fix bugs
+- [x] Prepare project for submission (exclude `node_modules` or other dependency directories)
+- [x] Be prepared to present the work, demo the application, and explain architectural choices and code
+- [x] Ready for live coding during the interview to refactor code, add features, or fix bugs
 
 ### Future Improvements
 - [ ] Replace json files with a SQL database
-- [ ] Use opinionated framework for the backend (e.g. NestJS) to improve scalability and maintainability
+- [ ] Use opinionated framework for the backend (e.g., NestJS) to improve scalability and maintainability
 - [ ] Authentication and Authorization for the API
 - [ ] Add more advanced error handling and logging
 - [ ] Implement UI to display more activity details by ID (redundant for now)
-- [ ] Replace the current search bar with a more advanced search features (e.g. sorting, filtering, etc.)
+- [ ] Replace the current search bar with more advanced search features (e.g., sorting, filtering, etc.)
 - [ ] Add caching mechanism (based on performance needs)
 - [ ] Fix variable ActivityCard component height for better UI/UX
+- [ ] "Hot reload" frontend/backend container and skip build caching to not get stuck with old content
