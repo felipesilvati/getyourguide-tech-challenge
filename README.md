@@ -6,9 +6,9 @@ Made by Felipe Silva (https://github.com/felipesilvati)
 
 ## Application Components
 
-- *frontend*: A Vite + React application that fetches and renders activities and suppliers data from the backend.
-- *backend*: A Node.js Express application that serves as an API provider for activities and suppliers information.
-- *e2e**: A Cypress end-to-end testing suite that ensures the application's features work as expected with significant test coverage.
+- **frontend**: A Vite + React application that fetches and renders activities and suppliers data from the backend.
+- **backend**: A Node.js Express application that serves as an API provider for activities and suppliers information.
+- **e2e**: A Cypress end-to-end testing suite that ensures the application's features work as expected with significant test coverage.
 
 ## Running the Application
 
