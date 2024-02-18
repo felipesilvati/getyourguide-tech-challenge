@@ -22,10 +22,18 @@ describe('ActivityCard', () => {
     expect(screen.getByTestId("activity-card-price").textContent).toBe(`From ${expectedPrice} per person`);
   });
 
-  it('displays the correct rating', () => {
-    render(<ActivityCard activity={activityMock} />);
-    expect(screen.getByTestId("activity-card-rate").textContent.trim()).toContain(activityMock.rating);
-  });
+  describe('rating', () => {
+    it('displays the correct rating number', () => {
+      render(<ActivityCard activity={activityMock} />);
+      expect(screen.getByTestId("activity-card-rate").textContent.trim()).toContain(activityMock.rating);
+    });
+  
+    // Checking how many stars rendered is out of scope (antd inner tests are responsible for that)
+    it('renders the antd <Rating /> component', () => {
+      render(<ActivityCard activity={activityMock} />);
+      expect(screen.getByTestId("activity-card-rate").querySelectorAll('.ant-rate')).toHaveLength(1);
+    })
+  })
 
   describe('special offer badge', () => {
     it('shows the badge only when specialOffer is true', () => {
@@ -62,7 +70,7 @@ describe('ActivityCard', () => {
       expect(tooltipContent).toHaveTextContent(activityMock.supplier.country);
     })
 
-    it('does not display additional supplier info if InfoCircleOutlined icon is not hovered', async () => {
+    it('does not display additional supplier info tooltip if InfoCircleOutlined icon is not hovered', async () => {
       render(<ActivityCard activity={activityMock} />);
       expect(screen.queryByRole('tooltip')).toBeNull();
     })
