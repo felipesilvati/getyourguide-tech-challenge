@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "4173:4173"
+    environment:
+      - VITE_BACKEND_URL=http://backend:3001
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"
+
+  cypress:
+    build:
+      context: ./e2e
+      dockerfile: Dockerfile
+    environment:
+      - CYPRESS_BASE_URL=http://frontend:4173
+    volumes:
+      - ./e2e:/e2e
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    depends_on:
+      - frontend
+      - backend
+    entrypoint: ["/bin/sh", "-c"]
+    command: [
+      "wait-for-it.sh frontend:4173 --strict --timeout=300 -- echo 'Frontend is up' && \
+       wait-for-it.sh backend:3001 --strict --timeout=300 -- echo 'Backend is up' && \
+       cypress run"
+    ]
