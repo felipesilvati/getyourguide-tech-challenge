@@ -103,3 +103,12 @@ describe('Error State', () => {
     cy.get('.ant-result-subtitle').should('contain', 'Sorry, something went wrong.');
   });
 });
+
+describe('Loading State', () => {
+  it('displays a loading spinner while fetching activities', () => {
+    cy.visit('/');
+    cy.get('.ant-spin').should('be.visible');
+    cy.wait(DEFAULT_WAIT_TIME_IN_MS);
+    cy.get('.ant-spin').should('not.exist');
+  });
+});
