@@ -8,7 +8,7 @@ import { SearchOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
 
-const apiUrl = import.meta.env.VITE_API_URL || 'http://backend:3001';
+const apiUrl = window?.Cypress ? 'http://backend:3001' : 'http://localhost:3001'
 
 const App = () => {
   const [page, setPage] = useState(1);
