@@ -22,7 +22,7 @@ To run the application:
    ```sh
    docker compose up --build
 
-   # or
+   # or simply
    ./run.sh
    ```
 
