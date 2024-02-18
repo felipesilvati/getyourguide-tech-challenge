@@ -29,7 +29,7 @@ const ActivityCard = ({ activity }) => {
   const supplierInfo = (
     <Flex gap="small">
       <Text italic>By {activity.supplier?.name || 'Unknown'}</Text>
-      <Tooltip placement="right"><InfoCircleOutlined color="#eb2f96" /><span data-testid="activity-card-supplier-tooltip">{supplierLocation}</span></Tooltip>
+      <Tooltip placement="right" title={supplierLocation}><InfoCircleOutlined color="#eb2f96" /></Tooltip>
     </Flex>
   );
 

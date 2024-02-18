@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import ActivityCard from './ActivityCard';
 import activities from '../../../resources/activities.json'
 import suppliers from '../../../resources/suppliers.json'
@@ -45,12 +46,25 @@ describe('ActivityCard', () => {
       expect(screen.getByText(`By ${activityMock.supplier.name}`)).toBeDefined();
     })
 
-    it('displays additional supplier info when hovering over the supplier name', () => {
+    it('displays additional supplier info when hovering over the InfoCircleOutlined icon', async () => {
       render(<ActivityCard activity={activityMock} />);
-      const supplierInfoTooltip = screen.getByText(`By ${activityMock.supplier.name}`);
-      const supplierLocation = `${activityMock.supplier.address} - ${activityMock.supplier.city} ${activityMock.supplier.zip} - ${activityMock.supplier.country}`;
-      fireEvent.mouseOver(supplierInfoTooltip);
-      expect(screen.getByTestId('activity-card-supplier-tooltip').textContent).toBe(supplierLocation);
+
+      // Find the InfoCircleOutlined icon which triggers the tooltip
+      const infoIcon = screen.getByRole('img', { name: /info-circle/i });
+
+      // Hover over the icon to trigger the tooltip
+      fireEvent.mouseOver(infoIcon);
+
+      const tooltipContent = await screen.findByRole('tooltip');
+      expect(tooltipContent).toHaveTextContent(activityMock.supplier.address);
+      expect(tooltipContent).toHaveTextContent(activityMock.supplier.city);
+      expect(tooltipContent).toHaveTextContent(activityMock.supplier.zip);
+      expect(tooltipContent).toHaveTextContent(activityMock.supplier.country);
+    })
+
+    it('does not display additional supplier info if InfoCircleOutlined icon is not hovered', async () => {
+      render(<ActivityCard activity={activityMock} />);
+      expect(screen.queryByRole('tooltip')).toBeNull();
     })
   })
 });
