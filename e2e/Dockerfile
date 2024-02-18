@@ -1,4 +1,4 @@
-FROM cypress/included:10.3.1
+FROM cypress/included:latest
 
 WORKDIR /e2e
 
@@ -9,6 +9,8 @@ RUN if ! command -v git &> /dev/null; then \
     git clone https://github.com/vishnubob/wait-for-it.git && \
     mv wait-for-it/wait-for-it.sh /usr/local/bin/wait-for-it.sh && \
     chmod +x /usr/local/bin/wait-for-it.sh
+
+RUN apt update && apt install -y chromium
 
 # Copy the e2e test directory into the image
 COPY . /e2e

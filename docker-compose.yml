@@ -1,15 +1,15 @@
 version: '3.8'
 services:
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
     ports:
       - "4173:4173"
-    environment:
-      - VITE_BACKEND_URL=http://backend:3001
     depends_on:
       - backend
 
   backend:
-    build: ./backend
+    build:
+      context: ./backend
     ports:
       - "3001:3001"

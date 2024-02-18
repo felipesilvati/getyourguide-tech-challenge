@@ -2,16 +2,16 @@ version: '3.8'
 
 services:
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
     ports:
       - "4173:4173"
-    environment:
-      - VITE_BACKEND_URL=http://backend:3001
     depends_on:
       - backend
 
   backend:
-    build: ./backend
+    build:
+      context: ./backend
     ports:
       - "3001:3001"
 
@@ -31,5 +31,5 @@ services:
     command: [
       "wait-for-it.sh frontend:4173 --strict --timeout=300 -- echo 'Frontend is up' && \
        wait-for-it.sh backend:3001 --strict --timeout=300 -- echo 'Backend is up' && \
-       cypress run"
+       cypress run --browser chromium"
     ]
