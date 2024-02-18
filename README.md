@@ -21,13 +21,10 @@ To run the application:
 
    ```sh
    docker compose up --build
+
+   # or
+   ./run.sh
    ```
-
-  Or simply:
-
-    ```sh
-    ./run.sh
-    ```
 
 This command will start the frontend application and the backend API. Once the services are running, you can access:
 
